@@ -1,0 +1,58 @@
+@layer reset; /* Create 1st layer named “reset” */
+@layer theme; /* Create 2nd layer named “theme” */
+
+@layer reset {
+  /* Append to layer named “reset” */
+  .box1 {
+    padding: 30px;
+    background: blue;
+    color: white;
+  }
+  .box2 {
+    padding: 30px;
+    background: $gray30;
+    color: white;
+  }
+  .box3 {
+    padding: 30px;
+    background: $green90;
+    color: white;
+  }
+}
+
+@layer theme {
+  /* Append to layer named “theme” */
+  .box1 {
+    padding: 30px;
+    background: red;
+    color: white;
+  }
+  .box2 {
+    padding: 30px;
+    background: $secondary80;
+    color: white;
+  }
+  .box3 {
+    padding: 30px;
+    background: $red80;
+    color: white;
+  }
+}
+@layer hi; /* 1st layer named hi */
+@layer special; /* 2nd layer named special */
+
+@layer special {
+  .item {
+    color: rebeccapurple;
+  }
+}
+@layer hi {
+  .item {
+    color: green;
+    padding: 10px;
+  }
+}
+
+code {
+  font-family: monospace;
+}

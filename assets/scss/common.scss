@@ -1,0 +1,174 @@
+html {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.content-wrap {
+  padding: 20px;
+  height: 100%;
+  background-color: $gray10;
+  border-radius: 5px;
+}
+.box-1 {
+  padding: 10px;
+  background-color: rgb(148, 221, 255);
+}
+.box-2 {
+  padding: 10px;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+/* ============= Button Style ============= */
+
+// 기본 스타일
+%btn {
+  display: inline-block;
+  min-width: 55px;
+  height: 30px;
+  line-height: normal;
+  padding: 0 10px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 400;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.btn--icon {
+    @apply flex items-center justify-center;
+    min-width: 60px;
+    padding: 0 12px;
+
+    span {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      margin-bottom: 1px;
+    }
+  }
+}
+
+%btn--lg {
+  height: 40px;
+  min-width: 70px;
+  padding: 0 15px;
+  font-size: 14px;
+
+  &.btn--icon {
+    min-width: 82px;
+
+    span {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+// 버튼별 스타일
+.btn {
+  // Primary btn
+  &__primary {
+    @extend %btn;
+    background: $primary70;
+    color: $white;
+
+    &:hover {
+      background-color: $primary80;
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: $primary70;
+      }
+    }
+  }
+
+  &__primary--lg {
+    @extend .btn__primary;
+    @extend %btn--lg;
+  }
+
+  // btn__secondary btn
+  &__secondary {
+    @extend %btn;
+    background: $secondary70;
+    color: $white;
+
+    &:hover {
+      background: $secondary80;
+    }
+
+    &:disabled {
+      &:hover {
+        background: $secondary70;
+      }
+    }
+  }
+
+  &__secondary--lg {
+    @extend .btn__secondary;
+    @extend %btn--lg;
+  }
+
+  // Primary-line btn
+  &__primary-line {
+    @extend %btn;
+    background: $white;
+    color: $primary70;
+    border: 1px solid $primary70;
+
+    &:hover {
+      background-color: $primary10;
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__primary-line--lg {
+    @extend .btn__primary-line;
+    @extend %btn--lg;
+  }
+
+  // Default btn
+  &__default {
+    @extend %btn;
+    background: $white;
+    color: $gray70;
+    border: 1px solid $gray20;
+
+    &:hover {
+      background-color: $gray10;
+      border: 1px solid $gray30;
+    }
+
+    &:disabled {
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__default--lg {
+    @extend .btn__default;
+    @extend %btn--lg;
+  }
+  &__call-confirm {
+    @extend %btn;
+    background: $green50;
+    color: $white;
+    padding: 0px 15px;
+  }
+  &__call-end {
+    @extend %btn;
+    @extend %btn--lg;
+    background: $red50;
+    color: $white;
+    padding: 0px 15px;
+  }
+}
